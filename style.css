@@ -1,27 +1,31 @@
-body{
-    padding: none;
-    border: none;
-    background-color: rgb(123, 167, 205);
+body {
+  padding: none;
+  border: none;
+  background-color: black;
 }
-.cell{
-    background-color: lightgray;
-            border: 0.1px solid #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
+.file {
+  background-color: lightgray;
+  border: 0.1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
-.active{
-    background-color: green;
+.active {
+  background-color: green;
 }
 
-#board {
-            align-content: center;
-            padding-left: 30%;
-            padding-top: 2%;
-            display: grid;
-            grid-template-columns: repeat(8, 64px);
-            grid-template-rows: repeat(8, 64px);
-            gap: 1px; /* space between cells */
-        
-        }
+#Board_class {
+  align-content: center;
+  padding-left: 30%;
+  padding-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(8, 49px);
+  grid-template-rows: repeat(8, 49px);
+  
+}
+#piece{
+  width: 30px;      /* shrink width */
+    height: auto;
+   
+}
