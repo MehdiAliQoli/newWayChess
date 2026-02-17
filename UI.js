@@ -1,4 +1,23 @@
-//import {board} from "./logic.js";
+let board = [
+  [-2, -3, -4, -6, -5, -4, -3, -2],
+  [-1, -1, -1, -1, -1, -1, -1, -1],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [1, 1, 1, 1, 1, 1, 1, 1],
+  [2, 3, 4, 6, 5, 4, 3, 2],
+];
+let LegalMoveBoard = [
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0],
+];
 
 const b_q = document.createElement("img");
 b_q.src = "/Pieces/b_queen_png_128px.png";
@@ -82,40 +101,41 @@ function w_drawbishop(file) {
 
 for (let i = 0; i < 8; i++) {
   for (let j = 0; j < 8; j++) {
-    const file = document.createElement("div");
+    let file = document.createElement("div");
+    file.dataset.row = i;
+    file.dataset.col = j;
     file.classList.add("file");
     Board_class.appendChild(file);
-    if((i+j)%2==0){
-        file.style.background = "rgb(109, 143, 75)";
+    if ((i + j) % 2 == 0) {
+      file.style.background = "rgb(109, 143, 75)";
+    } else {
+      file.style.background = "rgb(238, 238, 210)";
     }
-    else{
-        file.style.background = "rgb(238, 238, 210)";
-    }
-    
-    if (window.board[i][j] === -1) {
+
+    if (board[i][j] === -1) {
       b_drawpawn(file);
-    } else if (window.board[i][j] === -2) {
+    } else if (board[i][j] === -2) {
       b_drawrook(file);
-    } else if (window.board[i][j] === -3) {
+    } else if (board[i][j] === -3) {
       b_drawknight(file);
-    } else if (window.board[i][j] === -4) {
+    } else if (board[i][j] === -4) {
       b_drawbishop(file);
-    } else if (window.board[i][j] === -5) {
+    } else if (board[i][j] === -5) {
       file.appendChild(b_q);
-    } else if (window.board[i][j] === -6) {
+    } else if (board[i][j] === -6) {
       file.appendChild(b_k);
     }
-    if (window.board[i][j] === 1) {
+    if (board[i][j] === 1) {
       w_drawpawn(file);
-    } else if (window.board[i][j] === 2) {
+    } else if (board[i][j] === 2) {
       w_drawrook(file);
-    } else if (window.board[i][j] === 3) {
+    } else if (board[i][j] === 3) {
       w_drawknight(file);
-    } else if (window.board[i][j] === 4) {
+    } else if (board[i][j] === 4) {
       w_drawbishop(file);
-    } else if (window.board[i][j] === 5) {
+    } else if (board[i][j] === 5) {
       file.appendChild(w_q);
-    } else if (window.board[i][j] === 6) {
+    } else if (board[i][j] === 6) {
       file.appendChild(w_k);
     }
   }

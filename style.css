@@ -10,6 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  border: none;
 }
 .active {
   background-color: green;
@@ -20,12 +21,17 @@ body {
   padding-left: 30%;
   padding-top: 2%;
   display: grid;
-  grid-template-columns: repeat(8, 49px);
-  grid-template-rows: repeat(8, 49px);
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
   
 }
+#check{
+    padding-left: 30%;
+  padding-top: 2%;
+  display: grid; 
+}
 #piece{
-  width: 30px;      /* shrink width */
+  width: 40px;      /* shrink width */
     height: auto;
    
 }

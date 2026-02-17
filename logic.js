@@ -1,21 +1,12 @@
-window.board = [
-                    [-2,-3,-4,-6,-5,-4,-3,-2],
-                    [-1,-1,-1,-1,-1,-1,-1,-1],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                    [1,1,1,1,1,1,1,1],
-                    [2,3,4,6,5,4,3,2]
-];
-let LegalMoveBoard= [
-                    [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0],
-                     [0,0,0,0,0,0,0,0]
 
-];
+
+//basic moves
+const file = document.querySelectorAll('#board .file'); // all created file
+
+file.forEach(cell => {
+    cell.addEventListener('click', () => {
+        const row = Number(file.dataset.row);
+        const col = Number(file.dataset.col);
+        console.log(`Clicked cell at row ${row}, col ${col}`);
+    });
+});
